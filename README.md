@@ -8,8 +8,9 @@ Therefore, This Repository contains all the Assignments I will be solving for up
 
 ### The Repository is Structured in the way that, You will find :
 - Directory Names are actual Company Names
-- Inside Company Name there exist the Actual Project/Assignment Files Related to the position.
-- One Readme or Index File Inside a Company Name Directory to Explain the Assignment.
+- Inside Company Name there exist the Actual Project/Assignment Folder 
+- Inside the Project Name folder There are all Files/Folder related to project
+- There is One Readme or Index File Inside Every Company Name Directory to Explain the Assignments.
 
 
 Improvements are Always Appreciated ❤️

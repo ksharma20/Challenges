@@ -30,8 +30,8 @@ points out of the first two, You are welcome to submit your assignment, we don't
 ### Explanation / solution :
 
 ##### Download the Assignment Folder 
-- First of all you need to download the folder using below Download link 
-[Download](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ksharma20/Challenges/tree/main/YesAvail) <== YesAvail Assignment Folder
+- First of all you need to download the folder using 
+[Download link](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ksharma20/Challenges/tree/main/YesAvail) <== YesAvail Assignment Folder
 
 - This will take you to a Web page where Your download will Get started Automatically
 ![image](https://user-images.githubusercontent.com/72795959/147810693-64825f36-c9f6-4330-93d0-04f6ddd230b4.png)

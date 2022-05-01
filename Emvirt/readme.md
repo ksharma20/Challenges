@@ -40,13 +40,17 @@ For the demonstartion Purpose and to keep it bare minimum
 
 These are the steps I followed :
 - Created a basic model class 
+
 ![model](https://user-images.githubusercontent.com/72795959/166142468-4ca0d60b-1318-42d6-9d0b-60cb0e4d9288.png)
+
 - Created 2 Basic pages using bootstrap (1. Home & 2. Detail/Info )
 - Home page contains:
   * A sidebar
   * A List View of machines
   * Add Device Button
+
 ![image](https://user-images.githubusercontent.com/72795959/166142531-4ca7379a-e9b9-43b6-8200-447727ae0de3.png)
+
 
 - Detail Page Contains:
   * A side bar
@@ -54,6 +58,7 @@ These are the steps I followed :
   * Services
   * Logs Image
   * Terminal Image
+  
 ![image](https://user-images.githubusercontent.com/72795959/166142544-eff129b0-a53a-4f48-87b7-756a8dde538e.png)
 
 

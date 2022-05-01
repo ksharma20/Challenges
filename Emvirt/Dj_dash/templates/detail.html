@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Detail {% endblock title %}
+
+{% block body %}
+
+<nav class="navbar navbar-light text-white bg-dark py-3">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"></svg>
+        <span class="fs-4">Go Back</span>
+    </a>
+</nav>
+<main class="container-fluid" style="height: 93vh;">
+    <div class='row h-100'>
+        <div class="col-2 p-3 mr-3 text-dark bg-light">
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" aria-current="page">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#home"></use>
+                        </svg>
+                        Summary
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-black">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#speedometer2"></use>
+                        </svg>
+                        Device
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-black">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#table"></use>
+                        </svg>
+                        Location
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-black">
+                        <svg class="bi me-2" width="16" height="16">
+                            <use xlink:href="#grid"></use>
+                        </svg>
+                        Actions
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            {% if message %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                A New Machine of Type : <strong class="text-danger"> {{message.dtype}} </strong> with name : <strong
+                    class="text-primary"> {{message.name}} </strong> has been Created !!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %}
+        </div>
+        <div class="col-5">
+            <div class="card w-75 m-5">
+                <div class="card-body">
+                    <h5 class="card-title"> Device Name: {{machine.name}}</h5>
+                    <div class="row row-cols-2 p-3">
+                        <div class="col m-3">Status: Online</div>
+                        <div class="col m-3">Device ID: {{machine.pk}}</div>
+                        <div class="col m-3">Device Type: {{machine.dtype}} </div>
+                        <div class="col m-3">Created at: {{machine.createdat}} </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card w-75 m-5">
+                <div class="card-body">
+                    <h5 class="card-title">Services</h5>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col m-3">Service</th>
+                                <th scope="col m-3">Status</th>
+                                <th scope="col m-3">Release</th>
+                                <th scope="col m-3">Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <th scope="row">img</th>
+                                <td>running</td>
+                                <td>5</td>
+                                <td class="text-muted">disabled</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">git</th>
+                                <td>running</td>
+                                <td>5</td>
+                                <td class="text-muted">disabled</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Vpn</th>
+                                <td>running</td>
+                                <td>5</td>
+                                <td class="text-muted">disabled</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card w-75 mt-5">
+                <div class="card-body">
+                    <h5 class="card-title"> Logs </h5>
+                    <img src={% static 'Logs.png' %} alt="" height="30%">
+                </div>
+            </div>
+            <div class="card w-75">
+                <div class="card-body">
+                    <h5 class="card-title">Terminal</h5>
+                    <img src={% static 'Terminal.png' %} alt="" height="30%">
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock body %}

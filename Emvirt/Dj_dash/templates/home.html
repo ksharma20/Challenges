@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block body %}
+
+<nav class="navbar navbar-light text-white bg-dark py-3">
+  <form class="container-fluid justify-content-between ">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"></svg>
+      <span class="fs-4">Dashboard</span>
+    </a>
+    <button class="btn btn-outline-success me-2" type="button" data-bs-toggle="modal" data-bs-target="#addmachine">Add
+      Device/ Machine</button>
+  </form>
+</nav>
+<!-- Modal -->
+<div class="modal fade" id="addmachine" tabindex="-1" aria-labelledby="addmachineLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addmachineLabel">Add Device</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" id="name" aria-describedby="Name" required>
+          </div>
+          <div class="mb-3">
+            <label for="type" class="form-label">Os Type</label>
+            <input type="text" class="form-control" name="type" id="type" required>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Add Device</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="container-fluid" style="height: 93vh;">
+  <div class='row h-100'>
+    <div class="col-3 p-3 mr-3 text-white bg-dark">
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="#" class="nav-link active" aria-current="page">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#home"></use>
+            </svg>
+            Machines
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#speedometer2"></use>
+            </svg>
+            Settings
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#table"></use>
+            </svg>
+            Orders
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link text-white">
+            <svg class="bi me-2" width="16" height="16">
+              <use xlink:href="#grid"></use>
+            </svg>
+            Inactive
+          </a>
+        </li>
+      </ul>
+      <hr>
+      {% if message %}
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        A New Machine of Type : <strong class="text-danger"> {{message.dtype}} </strong> with name : <strong class="text-primary"> {{message.name}} </strong> has been Created !!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {% endif %}
+    </div>
+    <div class="col-8 ml-5 ">
+      <a href="/" class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
+        <span class="fs-5 fw-semibold">Devices</span>
+      </a>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Device ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Created at</th>
+            <th scope="col">Details</th>
+          </tr>
+        </thead>
+        {% if machines %}
+        <tbody>
+          {% for machine in machines %}
+          <tr>
+            <th scope="row">{{machine.pk}}</th>
+            <td>{{machine.name}}</td>
+            <td>{{machine.dtype}}</td>
+            <td>{{machine.createdat}}</td>
+            <td> <a href="machine/{{machine.pk}}" class="btn btn-outline-info"> Open Details </a> </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+        {% endif %}
+      </table>
+    </div>
+  </div>
+</main>
+{% endblock body %}

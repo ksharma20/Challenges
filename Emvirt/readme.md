@@ -10,11 +10,6 @@ What is the dashboard and what it does ?
 - Each is running some linux OS and some apps.
 - Dashboard simly shows a list of online / offline devices and how can we see what is running on them.
 
-The sample template is
-- https://www.creative-tim.com/live/soft-ui-dashboard-django,
-- https://github.com/creativetimofficial/soft-ui-dashboard-django,
-- https://www.creative-tim.com/product/soft-ui-dashboard-django,
-
 I need you to design 2 pages with minimal elements This are two screen shots from a similar website
 
 **Page 1 - List of devices**

@@ -65,3 +65,7 @@ These are the steps I followed :
 ### Download the solution
 Download Link = [Emvirt Task Solution](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ksharma20/Challenges/tree/main/Emvirt)
 
+**Please consider downloading it from the above link so you get current project related dir**
+![image](https://user-images.githubusercontent.com/72795959/166184978-943432a2-ff55-4c6a-b784-665bcb47cc92.png)
+
+After you click on link you download will start in 5 secs !

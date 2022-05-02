@@ -35,10 +35,20 @@ So your task is to design a similar page which shows
 - Botton Services list view
 - Logs and Terminal showing nothing, you can pick any graph UI element from the Soft-UI template.
 
+
 # Solution 
 For the demonstartion Purpose and to keep it bare minimum 
 
-These are the steps I followed :
+### Download the solution
+Download Link = [Emvirt Task Solution](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ksharma20/Challenges/tree/main/Emvirt)
+
+**Please consider downloading it from the above link so you get current project related dir**
+![image](https://user-images.githubusercontent.com/72795959/166184978-943432a2-ff55-4c6a-b784-665bcb47cc92.png)
+
+After you click on link you download will start in 5 secs !
+
+
+### These are the steps I followed :
 - Created a basic model class 
 
 ![model](https://user-images.githubusercontent.com/72795959/166142468-4ca0d60b-1318-42d6-9d0b-60cb0e4d9288.png)
@@ -61,11 +71,3 @@ These are the steps I followed :
   
 ![image](https://user-images.githubusercontent.com/72795959/166142544-eff129b0-a53a-4f48-87b7-756a8dde538e.png)
 
-
-### Download the solution
-Download Link = [Emvirt Task Solution](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ksharma20/Challenges/tree/main/Emvirt)
-
-**Please consider downloading it from the above link so you get current project related dir**
-![image](https://user-images.githubusercontent.com/72795959/166184978-943432a2-ff55-4c6a-b784-665bcb47cc92.png)
-
-After you click on link you download will start in 5 secs !

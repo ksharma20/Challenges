@@ -9,7 +9,37 @@ Phone Number and profile photo.
 your API.
 
 # Solution
-## Created 2 APis
+
+##### Download the Assignment Folder 
+- First of all you need to download the folder using 
+[Download link](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ksharma20/Challenges/tree/main/CyberNX) <== CyberNX Assignment Folder
+
+- This will take you to a Web page where Your download will Get started Automatically
+![image](https://user-images.githubusercontent.com/72795959/147810693-64825f36-c9f6-4330-93d0-04f6ddd230b4.png)
+
+- Save Zip file to your Required folder and Then Extract it as Well.
+
+- After Extracting you will see A Readme.md File and a Sub directory with project Name
+
+
+- Open this project folder (Dj_Auth).
+
+
+##### Setting Up the server
+- Open it in a Terminal or vs code and open terminal there
+![image](https://user-images.githubusercontent.com/72795959/147811935-b0ba6950-acc6-40d6-abfd-4d9f04802abf.png)
+
+
+- Run the following command 
+` python manage.py runserver `
+
+![image](https://user-images.githubusercontent.com/72795959/147812044-c4e36612-9486-47e1-9c66-c6d3e42e2584.png)
+
+- And open the following link in your browser
+` http://127.0.0.1:8000/ `
+
+
+## Task Completed - Created 2 APis
 ### 1. Login 
 ![image](https://user-images.githubusercontent.com/72795959/182542055-19912527-96b2-42e4-a101-27e43fe26951.png)
 

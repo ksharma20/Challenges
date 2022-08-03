@@ -15,7 +15,7 @@ class AuthUser(models.Model):
         verbose_name_plural = "AuthUsers"
 
     def __str__(self):
-        return self.user.fname
+        return self.user.username
 
     def get_absolute_url(self):
         return reverse("AuthUser_detail", kwargs={"pk": self.pk})

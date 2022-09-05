@@ -5,7 +5,6 @@ import requests
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-gh_tokken = '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'
 # Create your views here.
 @api_view(['GET'])
 def home(request):
@@ -27,7 +26,7 @@ def repos(request):
 
     header = {
         "Accept": "application/vnd.github+json",
-        "Authorization": f"Bearer {gh_tokken}"
+        # "Authorization": f"Bearer {gh_tokken}"
     }
     
     url = f'https://api.github.com/orgs/{org}/repos?per_page=50&page=1'
@@ -35,16 +34,18 @@ def repos(request):
     response = requests.get(url, headers=header)
     print(response.headers)
 
-    ttbor = response.elapsed.total_seconds()
-    ttbar = ttbor
+    ttbor = response.elapsed.total_seconds() # Time Takken By one Request
+    ttbar = ttbor # Time takken By all request (will be added one By one)
 
     n = 0
     if "Link" in response.headers:
+        # Calculating Number of pages (due to pagination) to reach
         n = int(response.headers["Link"].split(',')[1].split('?')[1].split('&')[-1].split('=')[1].split('>')[0])
     
     result = {}
 
     if n:
+        # Looping Over Pages 
         for i in range(1,n+1):
             url = f'https://api.github.com/orgs/{org}/repos?per_page=50&page={i}'
             response = requests.get(url, headers=header)
@@ -59,11 +60,14 @@ def repos(request):
             print(d['name'], " = ", d['stargazers_count'])
             result[d['name']] = d['stargazers_count']
 
+    # Sorting Results According to Stars 
     result = sorted(result.items(), key=lambda x: x[1], reverse=True)
 
     final = {
         'results': []
     }
+
+    # Adding Result to final Response 
     if top:
         for i in range(top):
             final['results'].append({
@@ -82,9 +86,11 @@ def repos(request):
                 'name': v[0],
                 'stars': v[1]
             })
+
     etime = datetime.now()
     ttime =  (etime.minute - stime.minute)*60 + etime.second - stime.second
 
+    # Adding Response times 
     final['rps_1'] = ttbor
     final['rps_all'] = ttbar
     final['total_rps'] = ttime
@@ -110,6 +116,7 @@ def commits(request, org, repo):
         until = request['until']
         view = request['view']
 
+    # Getting view which metrices to save in result (montly, yearly, daily)
     try:
         if view == 'y':
             ymd = 4
@@ -122,7 +129,7 @@ def commits(request, org, repo):
 
     header = {
         "Accept": "application/vnd.github+json",
-        "Authorization": f"Bearer {gh_tokken}"
+        # "Authorization": f"Bearer {gh_tokken}"
     }
     
     url = f"https://api.github.com/repos/{org}/{repo}/commits?since={since}&until={until}&per_page=50&page=1"
@@ -135,11 +142,13 @@ def commits(request, org, repo):
 
     n = 0
     if "Link" in response.headers:
+        # Getting Number of pages until final response 
         n = int(response.headers["Link"].split(',')[1].split('?')[1].split('&')[-1].split('=')[1].split('>')[0])
     
     result = {}
 
     if n:
+        # Looping over Pages to Get all responses 
         for i in range(1,n+1):
             url = f"https://api.github.com/repos/{org}/{repo}/commits?since={since}&until={until}&per_page=50&page={i}"
             response = requests.get(url, headers=header)
@@ -169,6 +178,7 @@ def commits(request, org, repo):
         'total_rps': ttime
     }
     
+    # Adding result to final Response 
     for k,v in result.items():
         final['results'].append({
             'date': k,

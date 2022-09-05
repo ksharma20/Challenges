@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-=!q_ssm7(+bi#9(__*#79*142ar7@$13uw7_l-b)_w%zf5vsfz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ 'api.django.server', 'admin.django.server', 'django.server', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = [ 'api.django.server', 'admin.django.server', 'django.server', 'api.127.0.0.1','127.0.0.1', 'api.localhost','localhost', 'api.0.0.0.0', '0.0.0.0']
 
 # CORS_ORIGIN_WHITELIST = [
 #     'http://django.server:8000',
@@ -102,10 +102,10 @@ WSGI_APPLICATION = 'GithubApiChart.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 }
 
 

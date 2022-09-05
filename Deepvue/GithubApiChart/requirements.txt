@@ -1,0 +1,5 @@
+django
+requests
+django-hosts
+djangorestframework
+django-cors-headers

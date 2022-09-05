@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Dashboard
+{% endblock title %}
+
+
+{% block main %}
+<div id="dch"> </div>
+<div id="inputForms" class="container">
+    <div style="min-height: 85vh;" class="row m-3 h-100 justify-content-center accordion accordion-flush"
+    id="accordionFlushExample">
+    <h1 class="text-center m-3"> Click on Any Of the Below Chart button to Open Corresponding Form </h1>
+        <div class="col-4 accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+                <button style="border: 3px solid green; border-radius: 10%;"
+                    class="text-center accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Bar Chart
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <form method="post" @submit.prevent='onSubmitBc'>
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="org" class="form-label">Organization Name <span class="text-muted">(Publically
+                                    Available on Github)</span></label>
+                            <input type="text" class="form-control" id="org" v-model="org" placeholder="deepvue-tech"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="top" class="form-label">Number of Top Repos <span class="text-muted">(Sorted By
+                                    Stars)</span></label>
+                            <input type="number" class="form-control" id="top" v-model="topr" placeholder="10">
+                        </div>
+                        <button class="btn btn-success" type="submit"> Display Bar Chart </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+                <button style="border: 3px solid green; border-radius: 10%;"
+                    class="text-center accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Line Chart
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <form method="post" @submit.prevent="onSubmitLc">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="org" class="form-label">Organization Name <span class="text-muted">(Publically
+                                    Available on Github)</span></label>
+                            <input type="text" class="form-control" id="org" v-model="org" placeholder="deepvue-tech"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="repo" class="form-label">Repository Name <span class="text-muted">(Of above
+                                    Organization)</span></label>
+                            <input type="text" class="form-control" id="repo" v-model="repo" placeholder="pygmy"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="view" class="form-label">View Point</label>
+                            <select class="form-control" name="view" v-model="view" id="view">
+                                <option value="m">Monthly</option>
+                                <option value="d">Daily</option>
+                                <option value="y">Yearly</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="stime" class="form-label">Select Start Date </label>
+                            <input type="datetime-local" class="form-control" id="stime" v-model="stime" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="etime" class="form-label">Select End Date </label>
+                            <input type="datetime-local" class="form-control" id="etime" v-model="etime" required>
+                        </div>
+                        <button class="btn btn-success" type="submit"> Display Line Chart </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="displayCharts" style="height: 80vh; display: none;" class="container">
+    <div style="max-height: 70%; max-width: 85%;">
+        <canvas style="display: none;" id="barChart"></canvas>
+    </div>
+    <div style="max-height: 70%; max-width: 85%;">
+        <canvas style="display: none;" id="lineChart"></canvas>
+    </div>
+</div>
+{% endblock main %}

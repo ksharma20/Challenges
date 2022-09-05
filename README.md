@@ -14,3 +14,9 @@ Therefore, This Repository contains all the Assignments I will be solving for up
 
 
 Improvements are Always Appreciated ❤️
+
+## Challenges Completed for:
+### [CyberNX](/CyberNX) - Authentication System using rest_framework
+### [Emvirt](/Emvirt) - Dashboard of IOT Devices
+### [Impulse Edu Group](/Impulse_Edu_Group) - REST Api's for To do list
+### [YesAvail](/YesAvail) - REST Api's for e-commerce site

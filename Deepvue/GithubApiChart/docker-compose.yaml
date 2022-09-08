@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  django:
+    image: ksharma20/django:ghchartsapi
+    ports:
+      - 8000:8000
+    command: python manage.py runserver 0.0.0.0:8000

@@ -18,14 +18,14 @@ Improvements are Always Appreciated ❤️
 
 ## Challenges Completed for:
 
-### [CyberNX](/CyberNX) - Authentication System using rest_framework
+### [CyberNX](CyberNX) - Authentication System using rest_framework
 
-### [Emvirt](/Emvirt) - Dashboard of IOT Devices
+### [Emvirt](Emvirt) - Dashboard of IOT Devices
 
-### [Impulse Edu Group](/Impulse_Edu_Group) - REST Api's for To-do list
+### [Impulse Edu Group](Impulse_Edu_Group) - REST Api's for To-do list
 
-### [YesAvail](/YesAvail) - REST Api's for e-commerce site
+### [YesAvail](YesAvail) - REST Api's for e-commerce site
 
-### [Deepvue](/Deepvue) - Proccesing Github REST Api's for Displaying top 10 Repos of an Organization.
+### [Deepvue](Deepvue) - Proccesing Github REST Api's for Displaying top 10 Repos of an Organization.
 
-### [KinderPass](/KinderPass) - REST Api's for Tasks list
+### [KinderPass](KinderPass) - REST Api's for Tasks list
